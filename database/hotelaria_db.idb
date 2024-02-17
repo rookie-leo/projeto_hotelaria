@@ -1,0 +1,15 @@
+CREATE TABLE tb_preferences(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    room_type VARCHAR(50),
+    preferred_floor VARCHAR(50),
+    additional_service VARCHAR(50)
+);
+
+CREATE TABLE tb_customer(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(11),
+    preferences_id INT,
+    FOREIGN KEY (preferences_id) REFERENCES tb_preferences(id)
+);
